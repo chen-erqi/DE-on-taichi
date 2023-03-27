@@ -1,5 +1,3 @@
-import os
-
 import numpy as np
 import taichi as ti
 
@@ -162,10 +160,6 @@ def DE(pop: ti.template(), max_iter: ti.i32, lb: ti.template(), ub: ti.template(
 
 import time
 
-M = np.loadtxt("./input/CEC2017_input_data/M_" + str(15) + "_D" + str(30) + ".txt")
-o = np.loadtxt("./input/CEC2017_input_data/shift_data_" + str(15) + ".txt")
-s = np.loadtxt(f"./input/CEC2022_input_data/shuffle_data_{6}_D{30}.txt", dtype=np.int32)
-
 search_num = 30
 dim = 30
 max_iter=300000
@@ -191,7 +185,7 @@ trial = ti.field(ti.float32, shape=(search_num, ))
 DE(pop=pop, max_iter=max_iter, lb=lb, ub=ub, fit=fit, best_fit=best_fit, best_pop=best_pop, trial=trial)
 
 res = best_fit.to_numpy()
-# print(res)
+print(res[-1])
 
 print(f'run time: {time.time() - start}')
 print('done')
