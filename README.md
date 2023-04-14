@@ -8,4 +8,4 @@ In our code, we prove that the advantage of taichi for evolutionary algorithm wh
 Without strict run time test, DE on taichi is faster than DE on python and matlab because the huge seq loop of iterations. The maximum number of iteration is set to 300,000.
 
 2d res：
-![res](https://user-images.githubusercontent.com/65438927/232079826-1a460c3a-66ac-462c-8fde-06dc92d0f5ac.gif)
+![res]()
