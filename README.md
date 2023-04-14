@@ -9,4 +9,4 @@ Without strict run time test, DE on taichi is faster than DE on python and matla
 
 2d res：
 
-![res](https://github.com/Nanase-Nishino/DE-on-taichi/blob/347005dc13c179bad6adb69c707ef13a6b44b160/res.gif)
+![res](https://github.com/Nanase-Nishino/DE-on-taichi/blob/99c025722a06a61abafe6333ef732d93351930c4/2dres.gif)
