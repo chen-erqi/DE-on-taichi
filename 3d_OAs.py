@@ -3,7 +3,7 @@ import taichi as ti
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-ti.init(arch=ti.cpu)
+ti.init(arch=ti.cuda)
 
 
 @ti.func
@@ -166,13 +166,6 @@ def DE(pop: ti.template(), max_iter: ti.i32, lb: ti.template(), ub: ti.template(
             best_fit[cur_iter] = all_best
             copy_2d_to_3d(a=all_pop, b=pop, iter=cur_iter)
 
-
-import time
-#
-# M = np.loadtxt("./input/CEC2017_input_data/M_" + str(15) + "_D" + str(30) + ".txt")
-# o = np.loadtxt("./input/CEC2017_input_data/shift_data_" + str(15) + ".txt")
-# s = np.loadtxt(f"./input/CEC2022_input_data/shuffle_data_{6}_D{30}.txt", dtype=np.int32)
-
 search_num = 20
 dim = 2
 max_iter = 50
@@ -243,18 +236,17 @@ for i in range(max_iter):
         col.append(np.round(_pop[i, _i, 1] ).astype(int))
         val.append(_z[np.round(_pop[i, _i, 0]).astype(int) + 100, np.round(_pop[i, _i, 1] ).astype(int) + 100])
 
-
     ax.scatter3D(row, col, val, color='black')
-    plt.savefig(f"./3dimg/iter-{i}.png")
+#     plt.savefig(f"./3dimg/iter-{i}.png")
     plt.pause(0.5)
 
 
-import imageio.v2 as imageio
-import os
+# import imageio.v2 as imageio
+# import os
 
-png_ls = os.listdir("./3dimg")
-f = []
-for i in png_ls:
-    f.append(imageio.imread("./3dimg/" + i))
+# png_ls = os.listdir("./3dimg")
+# f = []
+# for i in png_ls:
+#     f.append(imageio.imread("./3dimg/" + i))
 
-imageio.mimsave("3dres.gif", f, "GIF", duration=0.5)
+# imageio.mimsave("3dres.gif", f, "GIF", duration=0.5)
