@@ -1,4 +1,7 @@
 # DE-on-taichi
+
+this repo has been merged into taichi.examples
+
 Differential evolution(DE) on taichi and cuda
 
 DE is one kind of evolutionary algorithms that used to solve black-box optimization problem widely.
